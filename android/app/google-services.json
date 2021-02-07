@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "956037488270",
+    "project_id": "levitatestoreflutter",
+    "storage_bucket": "levitatestoreflutter.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:956037488270:android:482108c7dd9ddcc7c5f3df",
+        "android_client_info": {
+          "package_name": "br.com.menegon.flutter_levitate"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "956037488270-9p8ibgmrkpsvf2ghvl7qhe9qtlm1p50o.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAqxY7RElcjNoUurp_JxVEzwPEG0XTFfZo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "956037488270-9p8ibgmrkpsvf2ghvl7qhe9qtlm1p50o.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
