@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_levitate/tabs/home_tab.dart';
 
 class HomeScreen extends StatelessWidget {
 
@@ -10,9 +11,7 @@ class HomeScreen extends StatelessWidget {
       controller: _pageController,
       physics: NeverScrollableScrollPhysics(),
       children: <Widget>[
-        Container(color: Colors.orange,),
-        Container(color: Colors.green,),
-        Container(color: Colors.blue,),
+        HomeTab()
       ],
     );
   }
