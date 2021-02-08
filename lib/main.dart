@@ -11,7 +11,8 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Levitate Store',
       theme: ThemeData(
-        primarySwatch: Colors.amber
+        primarySwatch: Colors.blue,
+        primaryColor: Color.fromARGB(255, 4, 125, 141),
       ),
       debugShowCheckedModeBanner: false,
       home: HomeScreen(),
