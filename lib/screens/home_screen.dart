@@ -4,7 +4,6 @@ import 'package:flutter_levitate/tabs/products_tab.dart';
 import 'package:flutter_levitate/widgets/custom_drawer.dart';
 
 class HomeScreen extends StatelessWidget {
-
   final _pageController = PageController();
 
   @override
@@ -25,8 +24,12 @@ class HomeScreen extends StatelessWidget {
           drawer: CustomDrawer(_pageController),
           body: ProductsTab(),
         ),
-        Container(color: Colors.yellow,),
-        Container(color: Colors.green,),
+        Container(
+          color: Colors.yellow,
+        ),
+        Container(
+          color: Colors.green,
+        ),
       ],
     );
   }

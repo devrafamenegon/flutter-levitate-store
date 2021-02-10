@@ -21,8 +21,6 @@ class MyApp extends StatelessWidget {
   }
 }
 
-
-
 /*
   primary: 700 #344955 52, 73, 85
            800 #232F34 35, 47, 52
@@ -30,4 +28,3 @@ class MyApp extends StatelessWidget {
 
   secondary: 500 #F9AA33 249, 170, 51
 */
-

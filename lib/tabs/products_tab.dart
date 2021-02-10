@@ -7,15 +7,18 @@ class ProductsTab extends StatelessWidget {
   Widget build(BuildContext context) {
     return FutureBuilder<QuerySnapshot>(
       future: Firestore.instance.collection("products").getDocuments(),
-      builder: (context, snapshot){
-        if(!snapshot.hasData)
+      builder: (context, snapshot) {
+        if (!snapshot.hasData)
           return Center(
             child: CircularProgressIndicator(),
           );
         else {
-          var dividedTiles = ListTile.divideTiles(tiles: snapshot.data.documents.map((doc){
-                return CategoryTile(doc);
-              }).toList(), color: Colors.grey[500]).toList();
+          var dividedTiles = ListTile.divideTiles(
+                  tiles: snapshot.data.documents.map((doc) {
+                    return CategoryTile(doc);
+                  }).toList(),
+                  color: Colors.grey[500])
+              .toList();
 
           return ListView(
             children: dividedTiles,
