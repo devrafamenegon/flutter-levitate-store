@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_levitate/screens/home_screen.dart';
+import 'package:flutter_levitate/screens/login_screen.dart';
 
 void main() {
   runApp(MyApp());
@@ -16,7 +17,7 @@ class MyApp extends StatelessWidget {
         // primaryColor: Color.fromARGB(255, 4, 125, 141),
       ),
       debugShowCheckedModeBanner: false,
-      home: HomeScreen(),
+      home: LoginScreen(),
     );
   }
 }
