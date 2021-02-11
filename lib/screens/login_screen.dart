@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_levitate/screens/signup_screen.dart';
 
 class LoginScreen extends StatelessWidget {
 
@@ -18,7 +19,11 @@ class LoginScreen extends StatelessWidget {
               ),
             ),
             textColor: Colors.white,
-            onPressed: (){},
+            onPressed: (){
+                Navigator.of(context).pushReplacement(
+                    MaterialPageRoute(builder: (context)=>SignUpScreen())
+                );
+            },
           )
         ],
       ),
@@ -69,7 +74,7 @@ class LoginScreen extends StatelessWidget {
                 color: Theme.of(context).primaryColor,
                 onPressed: (){
                   if(_formKey.currentState.validate()){
-                    
+
                   }
                 },
               ),
