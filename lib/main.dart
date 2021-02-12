@@ -2,6 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_levitate/screens/home_screen.dart';
 import 'package:flutter_levitate/screens/login_screen.dart';
 import 'package:flutter_levitate/screens/signup_screen.dart';
+import 'package:scoped_model/scoped_model.dart';
+
+import 'models/user_model.dart';
 
 void main() {
   runApp(MyApp());
@@ -10,15 +13,17 @@ void main() {
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Levitate Store',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-        primaryColor: Color.fromARGB(255, 52, 73, 85),
-        // primaryColor: Color.fromARGB(255, 4, 125, 141),
-      ),
-      debugShowCheckedModeBanner: false,
-      home: HomeScreen(),
+    return ScopedModel<UserModel>(
+        model: UserModel(),
+        child: MaterialApp(
+          title: 'Levitate Store',
+          theme: ThemeData(
+            primarySwatch: Colors.blue,
+            primaryColor: Color.fromARGB(255, 52, 73, 85),
+            // primaryColor: Color.fromARGB(255, 4, 125, 141),
+          ),
+          debugShowCheckedModeBanner: false,
+          home: HomeScreen(),)
     );
   }
 }
