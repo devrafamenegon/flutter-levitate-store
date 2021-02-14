@@ -48,7 +48,7 @@ class UserModel extends Model {
   }
 
   void recoverPass(){
-    signUp(userData: null, pass: null, onSucess: null, onFail: null)
+    signUp(userData: null, pass: null, onSucess: null, onFail: null);
   }
 
   /*bool isLoggedIn(){
@@ -56,7 +56,7 @@ class UserModel extends Model {
   }*/
    Future<Null> _saveUserData(Map<String,dynamic> userData) async {
      this.userData = userData;
-     await Firestore.instance.collection("users").document(firebaseUser.uid).setData(userData)
+     await Firestore.instance.collection("users").document(firebaseUser.uid).setData(userData);
    }
 }
 
