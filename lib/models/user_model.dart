@@ -53,8 +53,20 @@ class UserModel extends Model {
     notifyListeners();
   }
 
+  void signOut() async {
+    await _auth.signOut();
+
+    userData = Map();
+    firebaseUser = null;
+
+  }
+
   void recoverPass(){
     signUp(userData: null, pass: null, onSucess: null, onFail: null);
+  }
+
+  bool isLoggedIn(){
+    return firebaseUser != null;
   }
 
   /*bool isLoggedIn(){
