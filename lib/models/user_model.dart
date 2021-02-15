@@ -29,7 +29,7 @@ class UserModel extends Model {
     email: userData['email'],
     password: pass
     ).then((authResult) async {
-      firebaseUser = authResult;
+      firebaseUser = authResult.user;
 
       await _saveUserData(userData);
 
