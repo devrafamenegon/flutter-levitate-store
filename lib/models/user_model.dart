@@ -81,8 +81,8 @@ class UserModel extends Model {
 
   }
 
-  void recoverPass(){
-    signUp(userData: null, pass: null, onSucess: null, onFail: null);
+  void recoverPass(String email){
+    _auth.sendPasswordResetEmail(email: email);
   }
 
   bool isLoggedIn(){
