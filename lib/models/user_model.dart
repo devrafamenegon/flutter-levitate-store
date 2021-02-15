@@ -16,24 +16,30 @@ class UserModel extends Model {
 
   bool isLoading = false;
 
-  void signUp({@required Map<String, dynamic> userData, @required String pass, @required VoidCallback onSucess, @required VoidCallback onFail}){
+  void signUp(
+      {@required Map<String, dynamic> userData,
+      @required String pass,
+      @required VoidCallback onSucess,
+      @required VoidCallback onFail}){
+
     isLoading = true;
     notifyListeners();
 
     _auth.createUserWithEmailAndPassword(
-    email: userData["email"],
+    email: userData['email'],
     password: pass
-    ).then((user) async {
-      firebaseUser = user;
+    ).then((authResult) async {
+      firebaseUser = authResult;
 
       await _saveUserData(userData);
 
       onSucess();
+      isLoading = false;
       notifyListeners();
     }).catchError((e){
       onFail();
       isLoading = false;
-
+      notifyListeners();
     });
   }
 
