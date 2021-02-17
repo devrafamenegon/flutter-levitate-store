@@ -3,9 +3,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_levitate/datas/product_data.dart';
 import 'package:flutter_levitate/tiles/product_tile.dart';
 
+//Esta tela recebe a categoria que estamos navegando, buscando cada produto chamando o snapshot que contém cada produto
 class CategoryScreen extends StatelessWidget {
-  final DocumentSnapshot snapshot;
 
+  final DocumentSnapshot snapshot; //indica qual categoria é
   CategoryScreen(this.snapshot);
 
   @override
@@ -34,6 +35,8 @@ class CategoryScreen extends StatelessWidget {
                 .document(snapshot.documentID)
                 .collection("items")
                 .getDocuments(),
+
+            //este snapshot indica cada documento(produto) da categoria
             builder: (context, snapshot) {
               if (!snapshot.hasData)
                 return Center(
@@ -53,20 +56,28 @@ class CategoryScreen extends StatelessWidget {
                       ),
                       itemCount: snapshot.data.documents.length,
                       itemBuilder: (context, index) {
-                        return ProductTile(
-                            "grid",
-                            ProductData.fromDocument(
-                                snapshot.data.documents[index]));
+
+                        //pega os dados de cada produto a partir do index
+                        ProductData data = ProductData.fromDocument(snapshot.data.documents[index]);
+                        //salvando a categoria do produto vinda do firebase em nosso próprio produto
+                        data.category = this.snapshot.documentID;
+
+                        //retorna o produto à tela
+                        return ProductTile("grid", data);
                       },
                     ),
                     ListView.builder(
                       padding: EdgeInsets.all(4.0),
                       itemCount: snapshot.data.documents.length,
                       itemBuilder: (context, index) {
-                        return ProductTile(
-                            "list",
-                            ProductData.fromDocument(
-                                snapshot.data.documents[index]));
+
+                        //pega os dados de cada produto a partir do index
+                        ProductData data = ProductData.fromDocument(snapshot.data.documents[index]);
+                        //salvando a categoria do produto vinda do firebase em nosso próprio produto
+                        data.category = this.snapshot.documentID;
+
+                        //retorna o produto à tela
+                        return ProductTile("list", data);
                       },
                     ),
                   ],

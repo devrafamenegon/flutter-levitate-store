@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
     //O modelo do usuário vem acima do modelo do carrinho pois, o carrinho precisa saber qual o usuário atual, mas o usuário não precisa ter conhecimento sobre o que tem em nosso carrinho.
     return ScopedModel<UserModel>(
         model: UserModel(),
-        child: ScopedModelDescendant(
+        child: ScopedModelDescendant<UserModel>(
           builder: (context, child, model){ //sempre que o user atual mudar, a tela é reconstruída
             return ScopedModel<CartModel>(
             model: CartModel(model),//passando o user model para o cart model
@@ -28,7 +28,7 @@ class MyApp extends StatelessWidget {
             ),
             debugShowCheckedModeBanner: false,
             home: HomeScreen(),),
-            )
+            );
           },
         )
     );

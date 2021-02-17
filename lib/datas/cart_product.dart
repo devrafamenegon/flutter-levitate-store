@@ -12,6 +12,8 @@ class CartProduct {
 
   ProductData productData;
 
+  CartProduct();
+
   //pegando um documento do firebase transformando em um CartProduct
   CartProduct.fromDocument(DocumentSnapshot document){
     cid = document.documentID;
@@ -26,8 +28,9 @@ class CartProduct {
     return {
       "category": category,
       "pid": pid,
-      "quantity": size,
-      "product": productData.toResumedMap(),
+      "quantity": quantity,
+      "size": size,
+      //"product": productData.toResumedMap(),
     };
   }
 }

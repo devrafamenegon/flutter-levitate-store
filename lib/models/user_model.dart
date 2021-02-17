@@ -16,7 +16,12 @@ class UserModel extends Model {
 
   bool isLoading = false;
 
+  //metodos estáticos são metodos da classe e não do objeto
+  //quando quisermos ter acesso ao user model de qualquer lugar do app, não será necessário o ScopedDescendant. Basta usar o "UserModel.of(context)"
+  static UserModel of(BuildContext context) =>
+      ScopedModel.of<UserModel>(context);
 
+  //carregar o usuário(caso esteja logado) quando se abre o app.
   @override
   void addListener(VoidCallback listener) {
     super.addListener(listener);
