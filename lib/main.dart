@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_levitate/models/cart_model.dart';
 import 'package:flutter_levitate/screens/home_screen.dart';
-import 'package:flutter_levitate/screens/login_screen.dart';
-import 'package:flutter_levitate/screens/signup_screen.dart';
 import 'package:scoped_model/scoped_model.dart';
 
 import 'models/user_model.dart';
@@ -13,17 +12,25 @@ void main() {
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    //O modelo do usuário vem acima do modelo do carrinho pois, o carrinho precisa saber qual o usuário atual, mas o usuário não precisa ter conhecimento sobre o que tem em nosso carrinho.
     return ScopedModel<UserModel>(
         model: UserModel(),
-        child: MaterialApp(
-          title: 'Levitate Store',
-          theme: ThemeData(
+        child: ScopedModelDescendant(
+          builder: (context, child, model){ //sempre que o user atual mudar, a tela é reconstruída
+            return ScopedModel<CartModel>(
+            model: CartModel(model),//passando o user model para o cart model
+            child: MaterialApp(
+            title: 'Levitate Store',
+            theme: ThemeData(
             primarySwatch: Colors.blue,
             primaryColor: Color.fromARGB(255, 52, 73, 85),
             // primaryColor: Color.fromARGB(255, 4, 125, 141),
-          ),
-          debugShowCheckedModeBanner: false,
-          home: HomeScreen(),)
+            ),
+            debugShowCheckedModeBanner: false,
+            home: HomeScreen(),),
+            )
+          },
+        )
     );
   }
 }

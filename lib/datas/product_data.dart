@@ -26,6 +26,6 @@ class ProductData {
       "title": title,
       "description": description,
       "price": price,
-    }
+    };
   }
 }
