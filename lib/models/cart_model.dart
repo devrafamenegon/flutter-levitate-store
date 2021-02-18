@@ -12,6 +12,8 @@ class CartModel extends Model {
   //lista com todos os prods do carrinho
   List<CartProduct> products = [];
 
+  bool isLoading = false;
+
   //quando criarmos o cart model, passaremos o user model, passando assim o usuário atual. Com isso, se caso o usuário atual mudar, o carrinho tbm muda
   CartModel(this.user);
 
