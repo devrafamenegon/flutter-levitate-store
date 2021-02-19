@@ -15,7 +15,10 @@ class CartModel extends Model {
   bool isLoading = false;
 
   //quando criarmos o cart model, passaremos o user model, passando assim o usuário atual. Com isso, se caso o usuário atual mudar, o carrinho tbm muda
-  CartModel(this.user);
+  CartModel(this.user){
+    if(user.isLoggedIn())
+    _loadCartItems();
+  }
 
   //metodos estáticos são metodos da classe e não do objeto
   //quando quisermos ter acesso ao cart model de qualquer lugar do app, não será necessário o ScopedDescendant. Basta usar o "CartModel.of(context)"
@@ -40,4 +43,30 @@ class CartModel extends Model {
     notifyListeners();
   }
 
+  void decProduct(CartProduct cartProduct){
+    cartProduct.quantity--;
+
+    //decrementando e atualizando a lista de produtos no carrinho do user
+    Firestore.instance.collection("users").document(user.firebaseUser.uid).collection("cart").document(cartProduct.cid).updateData(cartProduct.toMap());
+    notifyListeners();
+  }
+
+  void incProduct(CartProduct cartProduct){
+    cartProduct.quantity++;
+
+    //somando e atualizando a lista de produtos no carrinho do user
+    Firestore.instance.collection("users").document(user.firebaseUser.uid).collection("cart").document(cartProduct.cid).updateData(cartProduct.toMap());
+    notifyListeners();
+  }
+
+  void _loadCartItems() async {
+    //recuperando os produtos no carrinho do user
+    QuerySnapshot query = await Firestore.instance.collection("users").document(user.firebaseUser.uid).collection("cart").getDocuments();
+
+    //transformando cada produto do firebase e transformando num CartProduct e retornando uma lista com todos os CartProducts
+    products = query.documents.map((doc)=> CartProduct.fromDocument(doc)).toList();
+
+    notifyListeners();
+
+  }
 }
