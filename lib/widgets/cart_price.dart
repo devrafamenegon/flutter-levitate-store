@@ -54,14 +54,6 @@ class CartPrice extends StatelessWidget {
                   ],
                 ),
                 Divider(),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text("Entrega"),
-                    Text("R\$ 0.00")
-                  ],
-                ),
-                Divider(),
                 SizedBox(height: 12.0,),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,

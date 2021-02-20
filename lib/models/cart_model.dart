@@ -62,16 +62,6 @@ class CartModel extends Model {
     notifyListeners();
   }
 
-  void _loadCartItems() async {
-    //recuperando os produtos no carrinho do user
-    QuerySnapshot query = await Firestore.instance.collection("users").document(user.firebaseUser.uid).collection("cart").getDocuments();
-
-    //transformando cada produto do firebase e transformando num CartProduct e retornando uma lista com todos os CartProducts
-    products = query.documents.map((doc)=> CartProduct.fromDocument(doc)).toList();
-
-    notifyListeners();
-  }
-
   void setCoupon( String couponCode, int discountPercentage){
     this.couponCode = couponCode;
     this.discountPercentage = discountPercentage;
@@ -100,6 +90,69 @@ class CartModel extends Model {
 
   void updatePrices(){
     notifyListeners();
+  }
+
+  void _loadCartItems() async {
+    //recuperando os produtos no carrinho do user
+    QuerySnapshot query = await Firestore.instance.collection("users").document(user.firebaseUser.uid).collection("cart").getDocuments();
+
+    //transformando cada produto do firebase e transformando num CartProduct e retornando uma lista com todos os CartProducts
+    products = query.documents.map((doc)=> CartProduct.fromDocument(doc)).toList();
+
+    notifyListeners();
+  }
+
+  Future<String> finishOrder() async {
+
+    if(products.length == 0) return null;
+
+    isLoading = true;
+    notifyListeners();
+
+    double productsPrice = getProductsPrice();
+    double discount = getDiscount();
+    double shipPrice = getShipPrice();
+
+    //adicionando o pedido ao firebase e recuperando o id do pedido para salvar no usuário depois
+    DocumentReference refOrder = await Firestore.instance.collection("orders").add(
+      {
+        "clientId": user.firebaseUser.uid,
+        //transformando uma lista de cartProducts em um mapa
+        "products": products.map((cartProduct)=>cartProduct.toMap()).toList(),
+        "shipPrice": shipPrice,
+        "productsPrice": productsPrice,
+        "discount": discount,
+        "totalPrice": productsPrice - discount + shipPrice,
+        "status": 1,
+      }
+    );
+    
+    //salvando o id do pedido no usuário
+    await Firestore.instance.collection("users").document(user.firebaseUser.uid).collection("orders").document(refOrder.documentID).setData(
+      {
+        "orderId": refOrder.documentID
+      }
+    );
+
+    //pegando todos os produtos do carrinho
+    QuerySnapshot query = await Firestore.instance.collection("users").document(user.firebaseUser.uid)
+    .collection("cart").getDocuments();
+
+    //para cada produto no carrinho, o mesmo é deletado
+    for(DocumentSnapshot doc in query.documents){
+      doc.reference.delete();
+    }
+
+    //lista local
+    products.clear();
+
+    couponCode = null;
+    discountPercentage = 0;
+
+    isLoading = false;
+    notifyListeners();
+
+    return refOrder.documentID;
   }
 
 

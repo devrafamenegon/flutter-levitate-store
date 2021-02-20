@@ -33,7 +33,7 @@ class DiscountCard extends StatelessWidget {
                     CartModel.of(context).setCoupon(text, docSnap.data["percent"]);
                     Scaffold.of(context).showSnackBar(
                       SnackBar(content: Text("Desconto de ${docSnap.data["percent"]}% aplicado!"),
-                      backgroundColor: Theme.of(context).primaryColor,)
+                      backgroundColor: Color.fromARGB(255, 249, 170, 51),)
                     );
                   }else{
                     CartModel.of(context).setCoupon(null, 0);
