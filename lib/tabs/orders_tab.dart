@@ -23,7 +23,7 @@ class OrdersTab extends StatelessWidget {
           else {
             return ListView(
               //pegando cada documento do firebase, transformando em um ordertile(quadradinho que vai mostrar o pedido)
-              children: snapshot.data.documents.map((doc) => OrderTile(doc.documentID)).toList(),
+              children: snapshot.data.documents.map((doc) => OrderTile(doc.documentID)).toList().reversed.toList(),
             );
           }
         },
