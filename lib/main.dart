@@ -22,7 +22,7 @@ class MyApp extends StatelessWidget {
             child: MaterialApp(
             title: 'Levitate Store',
             theme: ThemeData(
-            primarySwatch: Colors.blue,
+            primarySwatch: Colors.amber,
             primaryColor: Color.fromARGB(255, 52, 73, 85),
             // primaryColor: Color.fromARGB(255, 4, 125, 141),
             ),

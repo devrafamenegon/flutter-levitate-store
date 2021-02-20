@@ -12,6 +12,9 @@ class CartModel extends Model {
   //lista com todos os prods do carrinho
   List<CartProduct> products = [];
 
+  String couponCode;
+  int discountPercentage = 0;
+
   bool isLoading = false;
 
   //quando criarmos o cart model, passaremos o user model, passando assim o usuário atual. Com isso, se caso o usuário atual mudar, o carrinho tbm muda
@@ -21,7 +24,7 @@ class CartModel extends Model {
   }
 
   //metodos estáticos são metodos da classe e não do objeto
-  //quando quisermos ter acesso ao cart model de qualquer lugar do app, não será necessário o ScopedDescendant. Basta usar o "CartModel.of(context)"
+  //quando quisermos ter acesso ao cart model de qualquer lugar do app, não será necessário o ScopedDescendant. Basta usar o "Ca  rtModel.of(context)"
   static CartModel of(BuildContext context) =>
       ScopedModel.of<CartModel>(context);
 
@@ -67,6 +70,10 @@ class CartModel extends Model {
     products = query.documents.map((doc)=> CartProduct.fromDocument(doc)).toList();
 
     notifyListeners();
+  }
 
+  void setCoupon( String couponCode, int discountPercentage){
+    this.couponCode = couponCode;
+    this.discountPercentage = discountPercentage;
   }
 }
