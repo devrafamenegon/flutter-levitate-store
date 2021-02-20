@@ -36,9 +36,9 @@ class MyApp extends StatelessWidget {
 }
 
 /*
-  primary: 700 #344955 52, 73, 85
-           800 #232F34 35, 47, 52
-           600 #4A6572 74, 101, 114
+ primary: 700 #344955 Color.fromARGB(255, 52, 73, 85)
+          800 #232F34 Color.fromARGB(255, 35, 47, 52)
+          600 #4A6572 Color.fromARGB(255, 74, 101, 114)
 
-  secondary: 500 #F9AA33 249, 170, 51
+ secondary: 500 #F9AA33 Color.fromARGB(255, 249, 170, 51)
 */
