@@ -8,6 +8,7 @@ import 'package:flutter_levitate/widgets/ship_card.dart';
 import 'package:scoped_model/scoped_model.dart';
 
 import 'login_screen.dart';
+import 'order_screen.dart';
 
 class CartScreen extends StatelessWidget {
   @override
@@ -86,7 +87,9 @@ class CartScreen extends StatelessWidget {
                 CartPrice(() async{
                   String orderId = await model.finishOrder();
                   if(orderId != null)
-                    print(orderId);
+                    Navigator.of(context).pushReplacement(
+                      MaterialPageRoute(builder: (context)=>OrderScreen(orderId))
+                    );
                 }),
               ],
             );
