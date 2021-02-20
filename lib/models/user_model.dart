@@ -23,7 +23,7 @@ class UserModel extends Model {
 
   //carregar o usuário(caso esteja logado) quando se abre o app.
   @override
-  void addListener(VoidCallback listener) {
+  void addListener(listener) {
     super.addListener(listener);
     _loadCurrentUser();
   }

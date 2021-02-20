@@ -1,3 +1,5 @@
+import 'dart:collection';
+
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 
@@ -15,7 +17,7 @@ class OrderTile extends StatelessWidget {
         padding: EdgeInsets.all(8.0),
         child: StreamBuilder<DocumentSnapshot>(
           //usamos o .snapshots pois ele retorna em tempo real um stream, ja o .get retornaria um FutureBuilder
-          stream: Firestore.instance.collection("order").document(orderId).snapshots(),
+          stream: Firestore.instance.collection("orders").document(orderId).snapshots(),
           builder: (context, snapshot){
             if(!snapshot.hasData){
               return Center(
@@ -23,9 +25,14 @@ class OrderTile extends StatelessWidget {
               );
             } else {
               return Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text("Código do pedido: ${snapshot.data.documentID}",
                   style: TextStyle(fontWeight: FontWeight.bold),
+                  ),
+                  SizedBox(height: 4.0),
+                  Text(
+                    _buildProductsText(snapshot.data)
                   )
                 ],
               );
@@ -34,5 +41,14 @@ class OrderTile extends StatelessWidget {
         ),
       ),
     );
+  }
+
+  String _buildProductsText(DocumentSnapshot snapshot){
+    String text = "Descrição:\n";
+    for(LinkedHashMap p in snapshot.data["products"]){
+      text += "${p["quantity"]} x ${p["product"]["title"]} (R\$ ${p["product"]["price"].toStringAsFixed(2)})\n";
+    }
+    text += "Total: R\$ ${snapshot.data["totalPrice"].toStringAsFixed(2)}";
+    return text;
   }
 }
