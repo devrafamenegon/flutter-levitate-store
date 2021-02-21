@@ -9,6 +9,7 @@ class CategoryScreen extends StatelessWidget {
   final DocumentSnapshot snapshot; //indica qual categoria é
   CategoryScreen(this.snapshot);
 
+
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(

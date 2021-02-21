@@ -23,6 +23,8 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  flutter_launcher_icons: ^0.8.1
+  flutter_launcher_name: ^0.0.1
 
 
   # The following adds the Cupertino Icons font to your application.
@@ -39,6 +41,14 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
+
+flutter_icons:
+  android: "launcher_ic"
+  ios: true
+  image_path: "assets/ic_launcher.png"
+
+flutter_launcher_name:
+  name: "Levitate's"
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec

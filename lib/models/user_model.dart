@@ -84,6 +84,7 @@ class UserModel extends Model {
     userData = Map();
     firebaseUser = null;
 
+    notifyListeners();
   }
 
   void recoverPass(String email){
@@ -112,7 +113,6 @@ class UserModel extends Model {
        }
      }
      notifyListeners();
-
    }
 }
 

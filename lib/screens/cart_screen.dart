@@ -70,7 +70,8 @@ class CartScreen extends StatelessWidget {
             return Center(
               child: Text("Nenhum produto no carrinho!",
                 style: TextStyle(fontSize: 20.0, fontWeight: FontWeight.bold),
-                textAlign: TextAlign.center,),
+                textAlign: TextAlign.center,
+              ),
             );
           } else {
             return ListView(
