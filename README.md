@@ -1,4 +1,4 @@
-# flutter_levitate
+# Flutter Levitate
 
 Virtual Store application developed with Flutter and using Firebase as a database. In this application I use many new techniques for me, for example, grid system, floating app bar, navigation drawer, a little deeper validation and other things ...
 
