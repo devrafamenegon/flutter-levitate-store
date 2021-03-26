@@ -1,16 +1,57 @@
-# flutter_levitate
+<h1 align="center">
+    
+</h1>
 
-Virtual Store application developed with Flutter and using Firebase as a database. In this application I use many new techniques for me, for example, grid system, floating app bar, navigation drawer, a little deeper validation and other things ...
+<p align="center">
+  <a href="#technologies">Technologies</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#-preview">Preview</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#-layout">Getting started</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#-project">Project</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#-layout">Layout</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#-license">License</a>
+</p>
 
-## Getting Started
+<br>
 
-This project is a starting point for a Flutter application.
+<p align="center">
+  
+</p>
 
-A few resources to get you started if this is your first Flutter project:
+## 🧪 Technologies
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+This project was developed using the following technologies:
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+- [Flutter](https://flutter.dev/)
+- [Firebase](https://firebase.google.com/)
+
+## 🔥 Preview
+
+## 🚀 Getting started
+
+Clone the project and access the folder
+
+```bash
+$ git clone https://github.com/C0bal/flutter-levitate-store && cd flutter-levitate-store
+```
+
+Follow the steps below
+
+```bash
+# Install the dependencies
+$ yarn
+
+# Start the project
+$ yarn dev
+```
+
+## 💻 Project
+
+## 🔖 Layout
+
+## 📝 License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE.md) file for details.
+
+---
+
+<p align="center">Made by Rafael Menegon</p>
