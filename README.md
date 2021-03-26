@@ -1,6 +1,10 @@
+<<<<<<< HEAD
 <h1 align="center">
     
 </h1>
+=======
+# Flutter Levitate
+>>>>>>> bbb353efb0fc7107e8cad30f1e80f9291f403b47
 
 <p align="center">
   <a href="#technologies">Technologies</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
