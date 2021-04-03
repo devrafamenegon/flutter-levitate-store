@@ -11,17 +11,17 @@ This project was developed using the following technologies:
 
 ## 🔥 Preview
 
-![Home](https://github.com/C0bal/php-exercises/blob/master/.github/home.gif)
+![Home](https://github.com/C0bal/flutter-levitate-store/blob/master/.github/home.gif)
 
-![Register](https://github.com/C0bal/php-exercises/blob/master/.github/register.gif)
+![Register](https://github.com/C0bal/flutter-levitate-store/blob/master/.github/register.gif)
 
-![Products](https://github.com/C0bal/php-exercises/blob/master/.github/products.gif)
+![Products](https://github.com/C0bal/flutter-levitate-store/blob/master/.github/products.gif)
 
-![Cart](https://github.com/C0bal/php-exercises/blob/master/.github/cart.gif)
+![Cart](https://github.com/C0bal/flutter-levitate-store/blob/master/.github/cart.gif)
 
-![My orders](https://github.com/C0bal/php-exercises/blob/master/.github/my-orders.gif)
+![My orders](https://github.com/C0bal/flutter-levitate-store/blob/master/.github/my-orders.gif)
 
-![Stores](https://github.com/C0bal/php-exercises/blob/master/.github/stores.gif)
+![Stores](https://github.com/C0bal/flutter-levitate-store/blob/master/.github/stores.gif)
 
 ## 🚀 Getting started
 
