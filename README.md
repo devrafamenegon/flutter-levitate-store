@@ -1,5 +1,5 @@
 <p align="center">
-  <img alt="Levitate" src=".github/ic-launcher.png" width="120px">
+  <img alt="Levitate" src=".github/ic_launcher.png" width="120px">
 </p>
 
 ## 🧪 Technologies
