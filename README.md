@@ -1,20 +1,5 @@
-<h1 align="center">
-    
-</h1>
-
 <p align="center">
-  <a href="#technologies">Technologies</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#-preview">Preview</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#-layout">Getting started</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#-project">Project</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#-layout">Layout</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#-license">License</a>
-</p>
-
-<br>
-
-<p align="center">
-
+  <img alt="Levitate" src=".github/ic-launcher.png" width="120px">
 </p>
 
 ## 🧪 Technologies
@@ -25,6 +10,18 @@ This project was developed using the following technologies:
 - [Firebase](https://firebase.google.com/)
 
 ## 🔥 Preview
+
+![Home](https://github.com/C0bal/php-exercises/blob/master/.github/home.gif)
+
+![Register](https://github.com/C0bal/php-exercises/blob/master/.github/register.gif)
+
+![Products](https://github.com/C0bal/php-exercises/blob/master/.github/products.gif)
+
+![Cart](https://github.com/C0bal/php-exercises/blob/master/.github/cart.gif)
+
+![My orders](https://github.com/C0bal/php-exercises/blob/master/.github/my-orders.gif)
+
+![Stores](https://github.com/C0bal/php-exercises/blob/master/.github/stores.gif)
 
 ## 🚀 Getting started
 
@@ -37,16 +34,16 @@ $ git clone https://github.com/C0bal/flutter-levitate-store && cd flutter-levita
 Follow the steps below
 
 ```bash
-# Install the dependencies
-$ yarn
+# Open the project
+$ Go to Android Studio
 
-# Start the project
-$ yarn dev
+# Run app
+$ Open project folder and run the application
 ```
 
 ## 💻 Project
 
-## 🔖 Layout
+Virtual Store application developed with Flutter and using Firebase as a database. In this application I use many new techniques for me, for example: grid system, floating app bar, navigation drawer, a little deeper validation and other things...
 
 ## 📝 License
 
